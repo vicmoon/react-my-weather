@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import "./Weather.css"
 
 export default function Weather(){
@@ -10,7 +11,7 @@ export default function Weather(){
             <div className="col-9 mb-3">
               <input
                 type="search"
-                placeholder="Enter a city.."
+                placeholder="Enter a city here.."
                 className="form-control"
                 autoFocus="on" 
               />
