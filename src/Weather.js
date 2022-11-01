@@ -4,8 +4,8 @@ import "./Weather.css"
 export default function Weather(){
     return(
         <div className="Weather">
-          <h1>How's the weather like? </h1>
-          <form >
+         
+          <form className="mt-5" >
           <div className="row">
             <div className="col-9 mb-3">
               <input
@@ -28,18 +28,21 @@ export default function Weather(){
         <h2> Prague</h2>       
         <div className="col-6 text-start"> 
             <ul>
+            <li> 
+                 <h2>20°C</h2></li>
                 <li>
                 Wednesday 07:00
                 </li>
                 <li >
                 Mostly cloudy
                 </li>
+                
             </ul>
         </div>
-        <div className="col-6">
+        <div className="col-6 text-start mt-3">
            <ul>
             <li>
-                Precipitation:20 C
+                Precipitation:10%
             </li>
             <li>
                 Humidity: 100%
