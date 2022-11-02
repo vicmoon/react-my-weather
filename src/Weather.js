@@ -1,22 +1,42 @@
-import React from "react";
+import React,  {useState} from "react";
 import axios from "axios";
 import "./Weather.css"
 
 export default function Weather(){
-    return(
-        <div className="Weather">
-         
-          <form className="mt-5" >
+
+  const[ loaded, setLoaded]= useState(false);
+  const [WeatherData, setWeatherData]=useState({});
+
+  
+  function handleResponse(response){
+  
+    console.log(response.data);
+    setWeatherData({
+      temperature: response.data.main.temp,
+      city: response.data.name,
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      wind : response.data.wind
+    });
+    setLoaded(true);
+  }
+
+
+  
+  let form = (
+    <div className="Weather">
+       <form className= "mt-5" >
           <div className="row">
-            <div className="col-9 mb-3">
+            <div className="col-9">
               <input
                 type="search"
-                placeholder="Enter a city here.."
+                placeholder="Enter a city.."
                 className="form-control"
-                autoFocus="on" 
+                autoFocus="on"
+               
               />
             </div>
-            <div className="col-3 mb-3">
+            <div className="col-3">
               <input
                 type="submit"
                 value="Search"
@@ -25,36 +45,48 @@ export default function Weather(){
             </div>
           </div>
         </form>
-        <div className="row">  
-        <h2> Prague</h2>       
-        <div className="col-6 text-start"> 
+        <div className="row">
+          <div>
+          <h2> {WeatherData.city} {Math.round(WeatherData.temperature)}°C</h2>
             <ul>
-            <li> 
-                 <h2>20°C</h2></li>
-                <li>
+               <li className="text-start">
                 Wednesday 07:00
                 </li>
-                <li >
-                Mostly cloudy
+                <li className="text-start"  >
+                {WeatherData.description}
                 </li>
-                
             </ul>
-        </div>
-        <div className="col-6 text-start mt-3">
-           <ul>
+          </div>
+          <div className="col-6 text-start mt-3">
+           <ul className="details">
             <li>
-                Precipitation:10%
+            10
             </li>
             <li>
-                Humidity: 100%
+            {WeatherData.humidity}: 100%
             </li>
             <li>
-                Wind:10km/h
+            {WeatherData.wind}:10km/h
             </li>
            </ul>
         </div>
         </div>
+    </div>
+  );
 
-        </div>
-    )
-}
+  if (loaded) {
+    return (
+      <div>
+        {form}
+      </div>
+    );
+  } else{
+      const key ="5f472b7acba333cd8a035ea85a0d4d4c";
+      let city= "Prague"
+      let url =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
+      axios.get(url).then(handleResponse);
+      return ("Loading data...");
+    
+    }
+  }
+

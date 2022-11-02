@@ -6,3 +6,13 @@
     list-style: none;
 }
 
+.Weather .details{
+ position: relative;
+ left:350px
+}
+
+.Weather .temperature{
+    position: relative;
+   
+    top: -200px
+}
