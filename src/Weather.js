@@ -1,6 +1,7 @@
 import React,  {useState} from "react";
 import axios from "axios";
 import "./Weather.css"
+import ReadableDate from "./ReadableDate";
 
 export default function Weather(props){
 
@@ -9,18 +10,17 @@ export default function Weather(props){
 
   
   function handleResponse(response){
-  
     console.log(response.data);
     setWeatherData({
       temperature: response.data.main.temp,
-      city: response.data.name,
-      description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
-      wind:response.data.wind.speed,
+      date: new Date(response.data.dt * 1000),
+      description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
-
-
+      wind: response.data.wind.speed,
+      city: response.data.name
     });
+
     setLoaded(true);
   }
 
@@ -52,12 +52,8 @@ export default function Weather(props){
           <div>
           <h2 className="mt-3 cityName">{WeatherData.city} </h2>
             <ul className="description text-start">
-               <li>
-                Wednesday 07:00
-                </li>
-                <li >
-                {WeatherData.description}
-                </li>
+               <li> <ReadableDate date={WeatherData.date} /> </li>
+                <li >{WeatherData.description}</li>
             </ul>
           </div>
           <div className="col-6 text-start">
