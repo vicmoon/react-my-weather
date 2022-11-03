@@ -4,7 +4,7 @@ import Weather from './Weather';
 export default function App() {
   return (
 <div className='App'>
-      <Weather/>
+      <Weather genericCity="Prague"/>
       
       <footer className="mb-3" >
       <a href='https://github.com/vicmoon/react-my-weather' target="_blank" rel="noreferrer">Open source code</a> by  
