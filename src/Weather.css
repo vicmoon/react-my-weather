@@ -11,6 +11,7 @@
  left:350px;
  bottom: 50px;
  
+ 
 }
 .Weather .temperature{
     position: relative;
@@ -18,11 +19,8 @@
     font-size: 80px;
 }
 
-.Weather .cityName{
- position: relative;
- right:200px;
-}
-
 .Weather .description{
 text-transform: capitalize;
+right:230px;
+margin-top: 5px;
 }
