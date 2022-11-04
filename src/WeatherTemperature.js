@@ -22,7 +22,7 @@ if( metrics === "celsius") {
     return (
         <div>
         <span>{Math.round(props.celsius)}</span>
-        <span className="units"> <a href="/" onClick={convertCelsius} >°C </a>|<a href="" onClick={convertFahrenheit}> °F </a> 
+        <span className="units"> <button onClick={convertCelsius} >°C </button>|<button  onClick={convertFahrenheit}> °F </button> 
         </span>
         </div>
     );
@@ -31,7 +31,7 @@ if( metrics === "celsius") {
     return (
         <div>
         <span>{Math.round(fahrenheit)}</span>
-        <span className="units"> <a href="/" onClick={convertCelsius} >°C</a>|<a href="" onClick={convertFahrenheit}> °F </a> 
+        <span className="units"> <button onClick={convertCelsius} >°C</button>|<button onClick={convertFahrenheit}> °F </button> 
         </span>
         </div>
     );
