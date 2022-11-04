@@ -1,6 +1,7 @@
 import React from "react";
 import ReadableDate from "./ReadableDate";
 import "./Weather.css"
+import WeatherTemperature from "./WeatherTemperature";
 
 
 export default function Weatherdetails(props) {
@@ -11,17 +12,23 @@ export default function Weatherdetails(props) {
                 <ul className="description text-start">
                    <li> <ReadableDate date={props.data.date} /> </li>
                     <li >{props.data.description}</li>
+                    <li> 
+                        <img 
+                        src ={props.data.iconURL}
+                        alt ="Cloudy"
+                        className="float-left">
+
+                        </img>
+                    </li>
                 </ul>
               </div>
               <div className="col-6 text-start">
-               <ul className="details">
-               <li className="temperature">{Math.round(props.data.temperature)}°C</li>
-                <li>
-                Humidity: {props.data.humidity} %
-                </li>
-                <li>
-                Wind: {props.data.wind} km/h
-                </li>
+               <span  className="degrees">
+               <WeatherTemperature celsius ={props.data.temperature} />
+               </span>
+               <ul className="details"> 
+                <li>Humidity: {props.data.humidity} %</li>
+                <li>Wind: {props.data.wind} km/h</li>
                </ul>
             </div>
             </div>

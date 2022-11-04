@@ -9,14 +9,24 @@
 .Weather .details{
  position: relative;
  left:350px;
- bottom: 50px;
- 
+ bottom: 30px;
  
 }
-.Weather .temperature{
+.Weather .degrees{
+    font-size: 50px;
     position: relative;
-    top: -20px;
-    font-size: 80px;
+    left:400px;
+    bottom: 60px;
+}
+
+.Weather .units{
+    font-size: 15px;
+    position: relative;
+    bottom: 40px;
+
+ }
+.WeatherTemperature .temperature{
+    font-size: 60px;
 }
 
 .Weather .description{

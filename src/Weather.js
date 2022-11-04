@@ -1,7 +1,7 @@
 import React,  {useState} from "react";
 import axios from "axios";
 import "./Weather.css"
-import Weathedetails from "./Weatherdetails.js"
+import Weatherdetails from "./Weatherdetails.js"
 
 
 export default function Weather(props){
@@ -13,11 +13,11 @@ export default function Weather(props){
   
   function handleResponse(response){
     console.log(response.data);
+    console.log(response.data.weather[0].icon);
     setWeatherData({
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
-      icon: response.data.weather[0].icon,
       iconURL: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
@@ -68,7 +68,7 @@ function handleSearch(event){
                 </div>
               </div>
             </form>
-           <Weathedetails data={WeatherData}/>
+           <Weatherdetails data={WeatherData}/>
          </div>
       </div>
     );
