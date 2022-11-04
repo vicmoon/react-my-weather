@@ -25,9 +25,7 @@
     bottom: 40px;
 
  }
-.WeatherTemperature .temperature{
-    font-size: 60px;
-}
+
 
 .Weather .description{
 text-transform: capitalize;
