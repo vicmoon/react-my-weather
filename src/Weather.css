@@ -8,15 +8,15 @@
 
 .Weather .details{
  position: relative;
- left:350px;
- bottom: 30px;
+ left:380px;
+ bottom: 150px;
  
 }
 .Weather .degrees{
-    font-size: 50px;
+    font-size:60px;
     position: relative;
     left:400px;
-    bottom: 60px;
+    bottom: 100px;
 }
 
 .Weather .units{

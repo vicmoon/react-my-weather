@@ -4,7 +4,7 @@ import Weather from './Weather';
 export default function App() {
   return (
  <div>  
-   <div className='App cityName'>
+   <div className='App'>
       <Weather genericCity="Prague"/>   
    </div>
       <footer className="mt-3 text-center " >

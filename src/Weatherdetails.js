@@ -23,13 +23,14 @@ export default function Weatherdetails(props) {
                 </ul>
               </div>
               <div className="col-6 text-start">
-               <span  className="degrees">
-               <WeatherTemperature celsius ={props.data.temperature} />
-               </span>
                <ul className="details"> 
                 <li>Humidity: {props.data.humidity} %</li>
                 <li>Wind: {props.data.wind} km/h</li>
                </ul>
+               <span  className="degrees">
+               <WeatherTemperature celsius ={props.data.temperature} />
+               </span>
+               
             </div>
             </div>
         );
