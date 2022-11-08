@@ -7,7 +7,8 @@ import WeatherTemperature from "./WeatherTemperature";
 export default function Weatherdetails(props) {
     return (
     <div>
-        <h2 className= "mt-3 text-start">{props.data.city} </h2>
+        <h2 className= "mt-3 text-start border border-opacity-25" >{props.data.city} </h2>
+        
         <div className="row">
                 <ul className="description text-start">
                    <li> <ReadableDate date={props.data.date} /> </li>
@@ -23,7 +24,7 @@ export default function Weatherdetails(props) {
                 </ul>
               </div>
               <div className="col-6 text-start">
-               <ul className="details"> 
+               <ul className="details border-info"> 
                 <li>Humidity: {props.data.humidity} %</li>
                 <li>Wind: {props.data.wind} km/h</li>
                </ul>
