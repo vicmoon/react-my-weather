@@ -45,7 +45,7 @@ if (loaded) {
 let apiKey ="2af1ab046f283f38f8ddb93800aaf9bd";
 let lat = props.coord.lat;
 let long=  props.coord.lon;
-let apiURL =`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
+let apiURL =`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
 axios.get(apiURL).then(handleResponse);
 }
 }
